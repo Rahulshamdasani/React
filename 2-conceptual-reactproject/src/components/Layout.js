@@ -21,6 +21,12 @@ const Layout = () => {
                     <a className="nav-link" href="/counter">Counter</a>
                 </li>
                 <li className="nav-item">
+                    <a className="nav-link" href="/useeffect">useEffect</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="/fetchdata">FetchData</a>
+                </li>
+                <li className="nav-item">
                     <a className="nav-link disabled" href="#">New</a>
                 </li>
                 </ul>

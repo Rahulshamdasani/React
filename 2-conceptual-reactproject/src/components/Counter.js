@@ -22,9 +22,9 @@ const Counter = () => {
                 <div className='text-center'>
                     <h1 className='text-center'>{count}</h1>
                 </div>
-                <button className='justify-content-center btn p-2' style={{marginLeft:"150px"}} onClick={()=>setCount(count-1)} >Decrement</button>
+                <button className='justify-content-center btn' onClick={()=>setCount(count-1)} >Decrement</button>
                 <button className='justify-content-center btn' style={{marginLeft:"5px"}}  onClick={()=>setCount(0)} >Reset</button>
-                <button className='justify-content-center mt-50 btn' style={{marginLeft:"5px"}}  onClick={handleClick2}>Increment</button>
+                <button className='justify-content-center btn' style={{marginLeft:"5px"}}  onClick={handleClick2}>Increment</button>
             </div>
         </div>
     )

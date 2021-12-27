@@ -53,3 +53,37 @@ const handleClick2 =() =>{
     },2000)
 }
 </pre>
+
+
+## 4. useEffect
+<i> It is the work that we do outside the component and update our document based on that work, like fetching data or something like that</i>
+
+ **_Note:_** <i>UseEffect runs after every component render</i>
+
+``` useEffect takes 2 parameters ```
+- **callback function** : This is the function which is called every time a useEffect is called
+- **Dependency Array** <i>`Optional`</i> : Second array is the array of depency array which is an optional parameter if nothing is passed in second array then it renders at every component render
+  - **Default** : Renders every time
+  - **[]** : If depency array is blank then it renders only when the first time page is rendered
+  - **[value]** : In this case, it renders when value is changed
+  - There can be any number of useEffects in a component
+- **Cleanup function** : Suppose we add an event listener inside the useEffect, or something like that, then we need to remove the event listener because otherwise it will be triggered on every render and eventually our application will break, so to do that, we can have a cleanup function inside the useEffect which is a return function actually so it can be like
+<pre>
+useEffect(() => {
+    window.addEventListener('resize',() => {
+        console.log(window.innerWidth)
+    })
+    return() => {
+        window.removeEventListener('resize',() => {
+            console.log(window.innerWidth)
+        }
+        )
+    
+    }
+})
+</pre>
+
+
+## 5. Fetching data
+
+<i>https://jsonplaceholder.typicode.com/posts</i> We will use this api to fetch data
