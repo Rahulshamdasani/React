@@ -102,3 +102,6 @@ useEffect(() => {
 - We want to display <pre> Loading... </pre> till the time it is fetching
 - Once the data is fetched we want to show name and url of the profile
 - It will be hard to test it, so we can slowdown the network settings in chrome to test it.
+
+## 7. Controlled Inputs and forms
+- Lets create a phonebook so that people can enter the name and phonenumber and see it as a list of objects
