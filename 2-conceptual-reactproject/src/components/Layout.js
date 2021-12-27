@@ -27,7 +27,7 @@ const Layout = () => {
                     <a className="nav-link" href="/fetchdata">FetchData</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link disabled" href="#">New</a>
+                    <a className="nav-link " href="/conditionalRending">conditionalRending</a>
                 </li>
                 </ul>
             </div>

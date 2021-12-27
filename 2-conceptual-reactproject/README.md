@@ -87,3 +87,18 @@ useEffect(() => {
 ## 5. Fetching data
 
 <i>https://jsonplaceholder.typicode.com/posts</i> We will use this api to fetch data
+<ul>
+    <li> We use useState with empty depency array
+    <li> Since dependency array is empty it will only execute once
+    <li> Once it is executed we make a call to a function fetch Data
+    <li> Inside fetch data we first fetch the data, convert it to json and use useState to set it inside data
+</ul>
+
+## 6. Conditional Rendering
+
+<i> ```https://api.github.com/users``` </i>
+
+- Now we are fetching the data from this url
+- We want to display <pre> Loading... </pre> till the time it is fetching
+- Once the data is fetched we want to show name and url of the profile
+- It will be hard to test it, so we can slowdown the network settings in chrome to test it.

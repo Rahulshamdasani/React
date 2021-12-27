@@ -32,6 +32,11 @@ const Home = () => {
             description:"We will use JSON placeholder api to fetch posts and display them in a card",
             moreDetails:"/fetchdata"
         },
+        {
+            title:"conditional Rending",
+            description:"In conditional rendering we will again practice fetching data from github users api and will return data if it is fetched else we will return loading",
+            moreDetails:"/conditionalrendering"
+        },
     ]
     return (
         <div className='container' style={{width:"70vw"}}>
