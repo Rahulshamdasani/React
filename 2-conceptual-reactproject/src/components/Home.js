@@ -48,6 +48,12 @@ const Home = () => {
 			description:
 				'In this section we will create a phonebook where user can create the form, and the input data is displayed in a card',
 			moreDetails: '/phonebook'
+		},
+		{
+			title: 'Large forms and setting single function to handle multiple events',
+			description:
+				'In this section we will see how to handle multiple events in a form and how to set a single function to handle multiple events',
+			moreDetails: '/largeform'
 		}
 	];
 	return (

@@ -47,6 +47,11 @@ const Layout = () => {
 								PhoneBook
 							</a>
 						</li>
+						<li className="nav-item">
+							<a className="nav-link " href="/largeForm">
+								LargeForm
+							</a>
+						</li>
 					</ul>
 				</div>
 			</nav>

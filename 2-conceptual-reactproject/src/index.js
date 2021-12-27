@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Counter from './components/Counter';
 import PhoneBook from './components/PhoneBook';
+import LargeForm from './components/LargeForm';
 
 function Index() {
 	return (
@@ -30,6 +31,7 @@ function Index() {
 					<Route exact path="/fetchdata" element={<FetchData />} />
 					<Route exact path="/conditionalrending" element={<ConditionalRendering />} />
 					<Route exact path="/phonebook" element={<PhoneBook />} />
+					<Route exact path="/largeform" element={<LargeForm />} />
 					<Route path="*" element={<BookList />} />
 				</Routes>
 			</Router>

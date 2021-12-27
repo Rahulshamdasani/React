@@ -105,3 +105,4 @@ useEffect(() => {
 
 ## 7. Controlled Inputs and forms
 - Lets create a phonebook so that people can enter the name and phonenumber and see it as a list of objects
+- We also need to consider the case when we have 15-20 inputs, at that time, we cannot write useState for all of them and then handleChange for all of them at that point we should do something like we did in LargeForm
