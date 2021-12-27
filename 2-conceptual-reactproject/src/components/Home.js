@@ -1,0 +1,34 @@
+import React from 'react'
+
+const Home = () => {
+    return (
+        <div className='menu'>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a href="/">MyApp</a>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+                <a className="nav-link" href="/Mapping">Mapping</a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" href="/usestate">Title Change</a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" href="/usestate2">ArrayChange-UseState</a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" href="/counter">counter</a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link disabled" href="#">New</a>
+            </li>
+            </ul>
+        </div>
+        </nav>
+        </div>
+    )
+}
+
+export default Home
+
+

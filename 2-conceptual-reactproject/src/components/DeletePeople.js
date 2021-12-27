@@ -14,13 +14,13 @@ const DeletePeople = () => {
             {
                 people.map((person, index) => {
                     return <div key={index}>
-                                <div>
-                                    <h4>{person}</h4>
-                                    <button onClick={() => { handleDelete(index) }}>Delete</button>
-                                    <br/>
-                                    <br/>
-                                </div>
-                            </div>
+                        <div className="card">
+                                    <div className="card-body">
+                                        <h5 className="card-title">{person}</h5>
+                                        <button className="btn btn-danger" onClick={() => handleDelete(index)}>Delete</button>
+                                    </div>
+                        </div>
+                        </div>
                 })
             }
         

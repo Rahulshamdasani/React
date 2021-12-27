@@ -24,3 +24,32 @@ since its an inline function it will be executed only on click, second way to do
 <p> useState is a react function and it is a named export so we need to use curley braces when trying to import it.</p>
 
 **_Note:_** useState returns an array of 2 values, first value is the actual value of state and 2nd value is the function which is the dispatch function.
+<p>In there we create a list and display it, and delete the items one by one</p>
+<br/>
+<i>Passing a function to useState</i> This is done inside counter, we are basically creating a counter using use state
+<br/>
+
+`Suppose you want to increase a counter but with a delay of 2 seconds`, how will you write it
+
+<pre>
+One way of writing will be:
+const handleClick2 =() =>{
+    setTimeout(()=>{
+        setCount(count+1)
+    },2000)
+}
+</pre>
+
+Although this fails because if we click the button 10 times without a delay, the setCount is called 10 times, but incremented after 2 secs, so the fetched values is 2 secs old, and hence it will not update the overall value
+
+` To write this sort of things we can do : `
+<pre>
+const handleClick2 =() =>{
+    setTimeout(()=>{
+        setCount((prevCount)=>{
+            return prevCount+1
+        
+        });
+    },2000)
+}
+</pre>
