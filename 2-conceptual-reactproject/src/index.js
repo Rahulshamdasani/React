@@ -6,7 +6,7 @@ import DeletePeople from './components/DeletePeople'
 import Home from './components/Home'
 import Layout from './components/Layout'
 
-import {BrowserRouter as Router, Routes, Route, Link, NavLink, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 // css
 import './index.css'
 import Counter from './components/Counter'
