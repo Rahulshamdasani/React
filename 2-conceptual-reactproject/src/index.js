@@ -9,6 +9,7 @@ import UseEffect from './components/UseEffect';
 import FetchData from './components/FetchData';
 import ConditionalRendering from './components/ConditionalRendering';
 import UseReducer from './components/UseReducer/index';
+import UseReducer2 from './components/useReducer2/index';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // css
@@ -35,7 +36,7 @@ function Index() {
 					<Route exact path="/phonebook" element={<PhoneBook />} />
 					<Route exact path="/largeform" element={<LargeForm />} />
 					<Route exact path="/useRefUseCase" element={<UseRefUseCase />} />
-					<Route exact path="/useReducer" element={<UseReducer />} />
+					<Route exact path="/useReducer" element={<UseReducer2 />} />
 					<Route path="*" element={<Home />} />
 				</Routes>
 			</Router>
