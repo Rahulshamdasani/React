@@ -8,6 +8,7 @@ import Layout from './components/Layout';
 import UseEffect from './components/UseEffect';
 import FetchData from './components/FetchData';
 import ConditionalRendering from './components/ConditionalRendering';
+import UseReducer from './components/UseReducer/index';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // css
@@ -15,6 +16,7 @@ import './index.css';
 import Counter from './components/Counter';
 import PhoneBook from './components/PhoneBook';
 import LargeForm from './components/LargeForm';
+import UseRefUseCase from './components/UseRefUseCase';
 
 function Index() {
 	return (
@@ -32,7 +34,9 @@ function Index() {
 					<Route exact path="/conditionalrending" element={<ConditionalRendering />} />
 					<Route exact path="/phonebook" element={<PhoneBook />} />
 					<Route exact path="/largeform" element={<LargeForm />} />
-					<Route path="*" element={<BookList />} />
+					<Route exact path="/useRefUseCase" element={<UseRefUseCase />} />
+					<Route exact path="/useReducer" element={<UseReducer />} />
+					<Route path="*" element={<Home />} />
 				</Routes>
 			</Router>
 		</div>

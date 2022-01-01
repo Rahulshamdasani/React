@@ -54,6 +54,16 @@ const Home = () => {
 			description:
 				'In this section we will see how to handle multiple events in a form and how to set a single function to handle multiple events',
 			moreDetails: '/largeform'
+		},
+		{
+			title: 'useRef, which means uncontrolled inputs',
+			description: 'In this section we will see how we can use useRef to create a controlled input.',
+			moreDetails: '/useRefUseCase'
+		},
+		{
+			title: 'useReducer to manage model and state',
+			description: 'We will see how to use useReducer to manage model and state',
+			moreDetails: '/useReducer'
 		}
 	];
 	return (
@@ -61,7 +71,7 @@ const Home = () => {
 			<div className="">
 				{pages.map((page, index) => {
 					return (
-						<div className="mt-5">
+						<div className="mt-5" key={index}>
 							<HomeCard
 								title={page.title}
 								description={page.description}

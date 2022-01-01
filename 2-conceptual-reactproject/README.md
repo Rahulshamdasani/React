@@ -106,3 +106,12 @@ useEffect(() => {
 ## 7. Controlled Inputs and forms
 - Lets create a phonebook so that people can enter the name and phonenumber and see it as a list of objects
 - We also need to consider the case when we have 15-20 inputs, at that time, we cannot write useState for all of them and then handleChange for all of them at that point we should do something like we did in LargeForm
+
+## 8. UseRef and uncontrolled inputs
+- We will make use of another hook, which is useRed and how it is used to create uncontrolled inputs.
+**_Important things:_**: 
+- useRef preserves the value between renders
+- useRef will not trigger rerender
+- It mainly targets dom elements/Nodes
+- If we use useRef we can basically eliminate the use of onChange handler and directly make a submit on button click and access the value using ```refVariable.current.value```
+- Checkout the <div style="color:gold">**components -> useRefUseCase**</div> file for more info

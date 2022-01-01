@@ -52,6 +52,16 @@ const Layout = () => {
 								LargeForm
 							</a>
 						</li>
+						<li className="nav-item">
+							<a className="nav-link " href="/useRefUseCase">
+								UseRef/UncontrolledINputs
+							</a>
+						</li>
+						<li className="nav-item">
+							<a className="nav-link " href="/useReducer">
+								useReducer
+							</a>
+						</li>
 					</ul>
 				</div>
 			</nav>
