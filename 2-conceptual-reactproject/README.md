@@ -115,3 +115,58 @@ useEffect(() => {
 - It mainly targets dom elements/Nodes
 - If we use useRef we can basically eliminate the use of onChange handler and directly make a submit on button click and access the value using ```refVariable.current.value```
 - Checkout the <div style="color:gold">**components -> useRefUseCase**</div> file for more info
+
+## 9. UseReducer
+- It is same as using redux
+- In this we create a default state
+<pre>
+    const defaultState = {
+		allNames: [],
+		isModalOpen: false,
+		modalContent: ''
+	};
+
+</pre>
+- Then we create a reducer function, it basically handles all the cases that we might encounter
+<pre>
+    '''const reducerFunction = (state, action) => {
+		console.log('state', state);
+		console.log('action', action);
+
+		switch (action.type) {
+			case 'ADD_NAME':
+				return {
+					...state,
+					allNames: [ ...state.allNames, action.payload ],
+					modalContent: `${action.payload} is set`,
+					isModalOpen: true
+				};
+
+			case 'NO_NAME':
+				return {
+					...state,
+					modalContent: 'Please enter a name',
+					isModalOpen: true
+				};
+				return state;
+		}
+	};'''
+</pre>
+- Then we initialize the reducer with this function and default state
+<pre>
+'''
+const [ state, dispatch ] = useReducer(reducerFunction, defaultState);
+'''
+</pre>
+- Then in handle submit we simply dispatch the function calls
+<pre>
+    const handleSubmit = (e) => {
+		e.preventDefault();
+		if (name) {
+			dispatch({ type: 'ADD_NAME', payload: name });
+			setName('');
+		} else {
+			dispatch({ type: 'NO_NAME', payload: 'Name is required' });
+		}
+	};
+</pre>
