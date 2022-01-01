@@ -25,6 +25,9 @@ const Index = () => {
 				isModelOpen = true;
 				modelContent = `Name pass kar bhosdike`;
 				return { ...state, isModelOpen, modelContent };
+
+			default:
+				return state;
 		}
 	};
 	const [ state, dispatch ] = useReducer(reducer, defaultState);
