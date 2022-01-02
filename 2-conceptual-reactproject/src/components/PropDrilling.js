@@ -8,6 +8,10 @@ const PropDrilling = () => {
 		setItems(newData);
 	};
 
+	return <PostList items={items} removeItem={removeItem} />;
+};
+
+const PostList = ({ items, removeItem }) => {
 	return (
 		<div className="container">
 			{items.map((item, index) => {

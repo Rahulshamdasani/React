@@ -172,3 +172,25 @@ const [ state, dispatch ] = useReducer(reducerFunction, defaultState);
 </pre>
 
 ## 10. Prop Drilling
+- In this section we will import data from dummydata component
+- Now we will display this data as a list item
+- We want to create a different component to display these
+- Now we want to give a button to remove these cards
+- But since the elements are been shown in different component we need to pass this function as props
+- It is okay for now since we have only two components but it is difficult when we have a log of components
+
+
+## 11. UseContext
+- We will use useContext to avoid propDrilling.
+- Suppose we are using the main export function for displaying list of posts
+- List of posts come from PostList component which uses singleItem component to display each item
+- Now we want to eliminate the prop drilling
+- So we can use useContext hooks as shown below:
+<ol>
+    <li> Create a context variable
+    <li> Wrap the main app inside the ```variableName.Provider```
+    <li> We also pass a variable value which can be anything, i.e. a string or object or anything
+    <li> We then can import this provider anywhere and directly use 
+    const { removeItem } = useContext(ItemContext);
+    <li> This works not only for children, but for all the grandchildren and great granchildren and so on.
+</ol>
