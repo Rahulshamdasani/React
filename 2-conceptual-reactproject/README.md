@@ -170,3 +170,5 @@ const [ state, dispatch ] = useReducer(reducerFunction, defaultState);
 		}
 	};
 </pre>
+
+## 10. Prop Drilling
