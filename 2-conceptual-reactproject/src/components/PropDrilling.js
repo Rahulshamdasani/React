@@ -20,11 +20,8 @@ const PropDrilling = () => {
 const SingleItem = ({ item, removeItem }) => {
 	return (
 		<div className="item">
-			<h4 className="card-title">{item.title}</h4>
-			<button className="btn btn-danger" onClick={() => removeItem(item.id)}>
-				{' '}
-				Delete{' '}
-			</button>
+			<h4>{item.title}</h4>
+			<button onClick={() => removeItem(item.id)}> Delete </button>
 		</div>
 	);
 };
