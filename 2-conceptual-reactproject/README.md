@@ -194,3 +194,49 @@ const [ state, dispatch ] = useReducer(reducerFunction, defaultState);
     const { removeItem } = useContext(ItemContext);
     <li> This works not only for children, but for all the grandchildren and great granchildren and so on.
 </ol>
+
+## 12. Custom Hooks
+Sometimes we have to write a lot of api calls and the basic code for an api call where we write a fetch query to a url, fetch the response and convert it to JSON is repeated again and again, in such cases, we can write it as a custom hook and use it again and again.
+- Suppose we try and fetch data from `https://jsonplaceholder.typicode.com/todos`
+- repetative part is : 
+<code>
+<pre>
+const [ items, setItems ] = useState([]);
+const [ isLoading, setIsLoading ] = useState(true);
+const fetchData = async () => {
+    const response = await fetch(URL);
+    const data = await response.json();
+    setItems(data);
+    setIsLoading(false);
+};
+useEffect(() => {
+    fetchData();
+}, []);
+</pre>
+</code>
+
+- So we can write this code in a seperate component which takes URL as a prop
+- One thing that should be taken care of is the useEffect should be called on URL change and not on first load
+- <code><pre>
+import { useState, useEffect } from 'react';
+
+export const MyFetchHook = ({ URL }) => {
+	const [ items, setItems ] = useState([]);
+	const [ isLoading, setIsLoading ] = useState(true);
+
+	const fetchData = async () => {
+		const response = await fetch(URL);
+		const data = await response.json();
+		setItems(data);
+		setIsLoading(false);
+	};
+
+	useEffect(() => {
+		fetchData();
+	}, []);
+
+	return { items, isLoading };
+};
+</pre></code>
+In this way we can create a custom component and call it using
+<code>const { items, isLoading } = MyFetchHook({ URL });</code>

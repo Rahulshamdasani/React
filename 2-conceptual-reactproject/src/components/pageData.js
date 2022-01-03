@@ -72,5 +72,11 @@ export const pages = [
 		description:
 			'Now we will do the exact same thing as we did in prop drilling but now we will use context api so that we dont need to pass the hook',
 		moreDetails: '/useContext'
+	},
+	{
+		title: 'Custom Hooks',
+		description:
+			'The steps which will be used again and again in the future can be clubbed into a custom hook. Custom hook can be said to be just another function which can be used to create a custom hook. We will see how to use custom hooks in this page.',
+		moreDetails: '/customHooks'
 	}
 ];
