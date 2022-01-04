@@ -233,10 +233,13 @@ export const MyFetchHook = ({ URL }) => {
 
 	useEffect(() => {
 		fetchData();
-	}, []);
+	}, [URL]);
 
 	return { items, isLoading };
 };
 </pre></code>
 In this way we can create a custom component and call it using
 <code>const { items, isLoading } = MyFetchHook({ URL });</code>
+
+## 12. Prop Types
+- 

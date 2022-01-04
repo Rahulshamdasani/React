@@ -21,6 +21,7 @@ import LargeForm from './components/LargeForm';
 import UseRefUseCase from './components/UseRefUseCase';
 import UseContext from './components/UseContext';
 import CustomHooks from './components/CustomHooks';
+import PropTypes from './components/PropTypes';
 
 function Index() {
 	return (
@@ -43,6 +44,7 @@ function Index() {
 					<Route exact path="/propDrilling" element={<PropDrilling />} />
 					<Route exact path="/useContext" element={<UseContext />} />
 					<Route exact path="/customHooks" element={<CustomHooks />} />
+					<Route exact path="/propTypes" element={<PropTypes />} />
 					<Route path="*" element={<Home />} />
 				</Routes>
 			</Router>
