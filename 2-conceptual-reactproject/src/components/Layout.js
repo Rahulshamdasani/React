@@ -81,6 +81,9 @@ const Layout = () => {
 									<a className="dropdown-item show" href="/useContext">
 										UseContext
 									</a>
+									<a className="dropdown-item show" href="/propTypes">
+										Prop Types
+									</a>
 								</div>
 							)}
 						</div>

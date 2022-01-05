@@ -78,5 +78,11 @@ export const pages = [
 		description:
 			'The steps which will be used again and again in the future can be clubbed into a custom hook. Custom hook can be said to be just another function which can be used to create a custom hook. We will see how to use custom hooks in this page.',
 		moreDetails: '/customHooks'
+	},
+	{
+		title: 'Prop Types',
+		description:
+			'Whenever we call an api and get an array of objects in return and suppose we want to map that prop to some component There might be missing data in our listNormally if there is missing data then it will show a blank field since the component did not recieve any prop so it cannot display it. We want to tackle this however more important is when the component is expecting an object and printing the data from inside that object',
+		moreDetails: '/propTypes'
 	}
 ];
