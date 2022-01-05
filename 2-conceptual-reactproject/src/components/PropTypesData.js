@@ -3,12 +3,20 @@ export const data = [
 		name: 'Molecule Man',
 		age: 29,
 		secretIdentity: 'Dan Jukes',
-		powers: [ 'Radiation resistance', 'Turning tiny', 'Radiation blast' ]
+		other: {
+			powers: 'Million Tonne Punch'
+		}
 	},
 	{
 		name: 'Madame Uppercut',
 		age: 39,
 		secretIdentity: 'Jane Wilson',
-		powers: [ 'Million tonne punch', 'Damage resistance', 'Superhuman reflexes' ]
+		other: {
+			powers: 'Million Tonne Punch'
+		}
+	},
+	{
+		name: 'Rahul',
+		age: 24
 	}
 ];
