@@ -119,20 +119,21 @@ useEffect(() => {
 ## 9. UseReducer
 - It is same as using redux
 - In this we create a default state
+<code>
 <pre>
     const defaultState = {
 		allNames: [],
 		isModalOpen: false,
 		modalContent: ''
 	};
-
 </pre>
+</code>
 - Then we create a reducer function, it basically handles all the cases that we might encounter
+<code>
 <pre>
-    '''const reducerFunction = (state, action) => {
+    const reducerFunction = (state, action) => {
 		console.log('state', state);
 		console.log('action', action);
-
 		switch (action.type) {
 			case 'ADD_NAME':
 				return {
@@ -150,15 +151,17 @@ useEffect(() => {
 				};
 				return state;
 		}
-	};'''
+	};
 </pre>
+</code>
 - Then we initialize the reducer with this function and default state
+<code>
 <pre>
-'''
 const [ state, dispatch ] = useReducer(reducerFunction, defaultState);
-'''
 </pre>
+</code>
 - Then in handle submit we simply dispatch the function calls
+<code>
 <pre>
     const handleSubmit = (e) => {
 		e.preventDefault();
@@ -170,6 +173,7 @@ const [ state, dispatch ] = useReducer(reducerFunction, defaultState);
 		}
 	};
 </pre>
+</code>
 
 ## 10. Prop Drilling
 - In this section we will import data from dummydata component
@@ -217,7 +221,8 @@ useEffect(() => {
 
 - So we can write this code in a seperate component which takes URL as a prop
 - One thing that should be taken care of is the useEffect should be called on URL change and not on first load
-- <code><pre>
+- <code>
+<pre>
 import { useState, useEffect } from 'react';
 
 export const MyFetchHook = ({ URL }) => {
@@ -237,9 +242,79 @@ export const MyFetchHook = ({ URL }) => {
 
 	return { items, isLoading };
 };
-</pre></code>
+</pre>
+</code>
 In this way we can create a custom component and call it using
 <code>const { items, isLoading } = MyFetchHook({ URL });</code>
 
 ## 12. Prop Types
-- 
+- Whenever we call an api and get an array of objects in return and suppose we want to map that prop to some component
+- There might be missing data in our list
+- Normally if there is missing data then it will show a blank field since the component did not recieve any prop so it cannot display it.
+- We want to tackle this however more important is when the component is expecting an object and printing the data from inside that object
+<code>
+<pre>
+export const data = [
+	{
+		name: 'Molecule Man',
+		age: 29,
+		secretIdentity: 'Dan Jukes',
+		other: {
+			powers: 'Million Tonne Punch'
+		}
+	},
+	{
+		name: 'Madame Uppercut',
+		age: 39,
+		secretIdentity: 'Jane Wilson',
+		other: {
+			powers: 'Million Tonne Punch'
+		}
+	},
+	{
+		name: 'Rahul',
+		age: 24,
+		secretIdentity: 'Rahzzz'
+	}
+];
+</pre></code>
+
+- Suppose our data is as shown above and the prop destructuring is 
+<code>{name, age, secretIdentity, other}</code>
+
+- Now if we try to map other.powers it will give error for third data point, because we are trying to access inner property of an object when the object itself is not there
+- To tackle this issue we have a default React inbuilt prop types
+- So where we are distructuring the props we can write
+<code>
+<pre>
+PropTypesDetails.propTypes = {
+	name: PropTypes.string.isRequired,
+	age: PropTypes.number.isRequired,
+	secretIdentity: PropTypes.string.isRequired,
+	other: PropTypes.object.isRequired
+};
+</pre></code>
+
+- To tackle this we have 2 possible solutions
+  - Default Props
+    <code>
+	<pre>
+	PropTypesDetails.defaultProps = {
+		name: 'John Doe',
+		age: 30,
+		secretIdentity: 'Unknown',
+		other: { powers: 'Unknown' }
+	};
+	</pre>
+	</code>
+  - Second way will be to use OR operator 
+    <code>
+	<pre>
+	<div className="item">
+		<h4>{name || 'John Doe'}</h4>
+		<h4>{age || '30'}</h4>
+		<h4>{secretIdentity || 'Unknown'}</h4>
+		<h4>{(other && other.powers) || 'unknown'}</h4>
+	</div>
+	</pre>
+	</code>
