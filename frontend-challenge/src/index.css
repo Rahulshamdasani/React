@@ -195,7 +195,6 @@ p {
 }
 .item button,
 .item a {
-	background: transparent;
 	border-color: transparent;
 	color: var(--clr-primary-5);
 	letter-spacing: var(--spacing);

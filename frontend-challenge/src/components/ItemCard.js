@@ -4,14 +4,15 @@ import { useState, useEffect } from 'react';
 const ItemCard = ({ item, id }) => {
 	console.log('*****', id);
 	const [ isLiked, setIsLiked ] = useState(false);
-	const handleLike = () => {
+	const handleLike = (e) => {
+		e.preventDefault();
 		setIsLiked(!isLiked);
 		const like = document.getElementById(`${id}like`);
 		if (isLiked) {
-			like.style.backgroundColor = 'blue';
+			like.style.backgroundColor = '#48A6E8';
 			like.style.color = 'white';
 		} else {
-			like.style.backgroundColor = 'red';
+			like.style.backgroundColor = '#EE4B2B';
 			like.style.color = 'white';
 		}
 	};
@@ -26,14 +27,27 @@ const ItemCard = ({ item, id }) => {
 				<p style={{ marginTop: '7px', fontSize: '10px', letterSpacing: '0px', fontWeight: 'normal' }}>
 					{item.explanation}
 				</p>
-				<button
-					id={`${id}like`}
-					onClick={handleLike}
-					style={{ display: 'inline-block', color: 'white' }}
-					className="btn btn-primary likeBtn"
-				>
-					{!isLiked ? 'Like 👍🏻' : 'Undo Like 👎🏻'}
-				</button>
+				<div className="row">
+					<div className="col-md-6">
+						<button
+							id={`${id}like`}
+							onClick={(e) => handleLike(e)}
+							style={{ display: 'inline-block', color: 'white' }}
+							className="btn btn-primary"
+						>
+							{!isLiked ? 'Like 👍🏻' : 'Undo Like 👎🏻'}
+						</button>
+					</div>
+					<div className="col-md-6">
+						<button
+							id={`${id}share`}
+							style={{ display: 'inline-block', color: 'white' }}
+							className="btn btn-primary"
+						>
+							Share
+						</button>
+					</div>
+				</div>
 			</section>
 		</article>
 	);
