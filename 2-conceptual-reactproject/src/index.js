@@ -22,6 +22,8 @@ import UseRefUseCase from './components/UseRefUseCase';
 import UseContext from './components/UseContext';
 import CustomHooks from './components/CustomHooks';
 import PropTypes from './components/PropTypes';
+import PersonDetails from './components/Advanced React/PersonDetails';
+import PassingParameters from './components/Advanced React/PassingParameters';
 
 function Index() {
 	return (
@@ -45,6 +47,8 @@ function Index() {
 					<Route exact path="/useContext" element={<UseContext />} />
 					<Route exact path="/customHooks" element={<CustomHooks />} />
 					<Route exact path="/propTypes" element={<PropTypes />} />
+					<Route exact path="dynamicRoute" element={<PassingParameters />} />
+					<Route path="/person/:id" element={<PersonDetails />} />
 					<Route path="*" element={<Home />} />
 				</Routes>
 			</Router>

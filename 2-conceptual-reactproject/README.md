@@ -318,3 +318,64 @@ PropTypesDetails.propTypes = {
 	</div>
 	</pre>
 	</code>
+
+
+## 13. React rouer Dom
+```npm install react-router-dom ```<br/>
+If you want to save it in the dependencies then use ```npm install react-router-dom --save```<br/>
+
+
+```
+<Router>
+	<Routes>
+		<Route exact path="/" element={<Home />} />
+		<Route exact path="/Mapping" element={<BookList />} />
+		<Route exact path="/usestate" element={<ChangeTitle />} />
+		<Route exact path="/usestate2" element={<DeletePeople />} />
+		<Route exact path="/counter" element={<Counter />} />
+		<Route exact path="/useeffect" element={<UseEffect />} />
+		<Route exact path="/fetchdata" element={<FetchData />} />
+		<Route exact path="/conditionalrending" element={<ConditionalRendering />} />
+		<Route exact path="/phonebook" element={<PhoneBook />} />
+		<Route exact path="/largeform" element={<LargeForm />} />
+		<Route exact path="/useRefUseCase" element={<UseRefUseCase />} />
+		<Route exact path="/useReducer" element={<UseReducer2 />} />
+		<Route exact path="/propDrilling" element={<PropDrilling />} />
+		<Route exact path="/useContext" element={<UseContext />} />
+		<Route exact path="/customHooks" element={<CustomHooks />} />
+		<Route exact path="/propTypes" element={<PropTypes />} />
+		<Route path="*" element={<Home />} />
+	</Routes>
+</Router>
+```
+
+# Advanced react
+
+## 14. Passing parameters in URL
+STEPS:<BR/>
+1. Declare proper Route in index.js or whereever router is called
+	<code>
+	```
+		<Route exact path="dynamicRoute" element={<PassingParameters />} />	
+		<Route path="/person/:id" element={<PersonDetails />} />
+	```
+	</code>
+2. According to this dynamicRoute takes us to a component which shows list of items and then we want to click on that link and go to that person's details
+3. In the person component do the dynamic routing
+	```
+		{data.map((person) => {
+			return (
+				<div className="item" key={person.id}>
+					<h4>{person.title}</h4>
+					<Link to={`/person/${person.id}`}>
+						<button>View Details</button>
+					</Link>
+				</div>
+			);
+		})}
+	```
+4. In the person details component extract id from the URL, id is the name which should be same as the one declared in the Route
+	```
+	let { id } = useParams();
+	```
+5. 
