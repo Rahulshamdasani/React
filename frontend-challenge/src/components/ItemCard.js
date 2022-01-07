@@ -1,8 +1,11 @@
 import React from 'react';
 import '../App.css';
-import { useState, useEffect } from 'react';
+import Modal from './Modal';
+import { useState } from 'react';
+
 const ItemCard = ({ item, id }) => {
 	console.log('*****', id);
+	const [ showModal, setShowModal ] = useState(false);
 	const [ isLiked, setIsLiked ] = useState(false);
 	const handleLike = (e) => {
 		e.preventDefault();
@@ -15,6 +18,10 @@ const ItemCard = ({ item, id }) => {
 			like.style.backgroundColor = '#EE4B2B';
 			like.style.color = 'white';
 		}
+	};
+	const handleShare = (url) => {
+		setShowModal(!showModal);
+		console.log('*****', url);
 	};
 
 	return (
@@ -43,10 +50,14 @@ const ItemCard = ({ item, id }) => {
 							id={`${id}share`}
 							style={{ display: 'inline-block', color: 'white' }}
 							className="btn btn-primary"
+							onClick={() => {
+								handleShare(item.url);
+							}}
 						>
-							Share
+							share
 						</button>
 					</div>
+					{showModal && <Modal title={item.title} url={item.url} />}
 				</div>
 			</section>
 		</article>

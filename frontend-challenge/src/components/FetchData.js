@@ -16,9 +16,12 @@ export const FetchData = ({ URL }) => {
 		setIsLoading(false);
 	};
 
-	useEffect(() => {
-		fetchData();
-	}, []);
+	useEffect(
+		() => {
+			fetchData();
+		},
+		[ URL ]
+	);
 
 	return { items, isLoading };
 };

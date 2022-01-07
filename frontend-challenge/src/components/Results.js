@@ -4,7 +4,7 @@ import ItemCard from './ItemCard';
 
 const Results = ({ searchTerm }) => {
 	const { items, isLoading } = FetchData({
-		URL: 'https://api.nasa.gov/planetary/apod?api_key=cnM3gjok2eAG4KmkRdygzyF3gyR1bCTtontgeShN&&count=5'
+		URL: `https://api.nasa.gov/planetary/apod?api_key=cnM3gjok2eAG4KmkRdygzyF3gyR1bCTtontgeShN&&count=${searchTerm}`
 	});
 	return (
 		<div className="container">
