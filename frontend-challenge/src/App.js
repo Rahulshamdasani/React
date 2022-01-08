@@ -10,6 +10,9 @@ function App() {
 	};
 	return (
 		<div className="container">
+			<h2>
+				<a href="https://github.com/Rahulshamdasani/shopifyFrontendChallenge">Source Code</a>
+			</h2>
 			<h4>
 				We are using the{' '}
 				<a href="https://api.nasa.gov/#:~:text=of%20the%20Day-,APOD,-One%20of%20the">Apod API</a>

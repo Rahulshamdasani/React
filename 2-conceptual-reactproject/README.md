@@ -378,4 +378,45 @@ STEPS:<BR/>
 	```
 	let { id } = useParams();
 	```
-5. 
+5. Now inside the component we need to parse it as a Integer because we are passing it as an string
+
+## 15. Caching and optimizations. avoiding rerender a component by using (memo)
+**_NOTE_** : Don't go crazy on memoization because it uses a lot of resources and it is not needed most of the times, use it only when you want a list of 10,000 to not render again and again
+
+Consider this case
+- Suppose you have a page which has three components
+  - First component is a counter which has a count showing and a button to increase and decrease a count
+  - Second component is a big list which fetches data from a page and it is biglist because it has 10000 items
+  - Third component is the component which shows details of all these 10,000 components
+
+- Suppose we are storing this count inside a useState hook
+- Now whenever you increase or decrease a count, this useStates rerenders the page but avoid the state to be lost
+- Now although the count increases, the other two components gets rerendered, i.e. all the 10,000 list items and fetched again and all go to the third component and get displayed.
+- We dont want to rerender these components unless the data going in those components is changed, this can be achieved by simple steps
+
+TO avoid this rerenders
+- Simply wrap the second component definition inside <code>React.memo</code>
+- React.memo is the method of react which memoizes the component data and avoids rerender unless the component is changed.
+- **Memo is a function which takes the whole component as the input.**
+
+## 16. Advanced caching, avoiding rerender a prop (useCallback hook)
+- Suppose we use React.memo on a component
+- But we know that a component rerenders when its props are rerendered
+- Now consider this situation
+  - You have a big list of grocery and you avoided its rerender by using a React.memo function
+  - But you are sending it cart value which is declared in the useState hook
+  - Now you might want the grocery list to rerender if the cart is updated
+  - But you will see that if the counter (which is above the cart) is updated then the state is rerendered, as a result of which cart function is rerendered, because cart is also a state
+  - Now since the cart is rerendered the biglist will be rerendered because it takes cart as prop
+  - We dont want this
+  - So we cant wrap the function which takes the cart in React.useCallback
+  - **useCallback is a react function which takes a function as the input.**
+
+## 17. Caching to avoid rerender a function Value (useMemo)
+- Suppose we have a list of 10,000 grocery items
+- Now we write a function in which we calculate the max price among all the items
+- This function might take long to compute
+- However we dont want it to render again and again because max will remain the same unless the list of products change
+- So we can wrap this function inside useMemo and in the dependency array we can pass the products which makes sure that this function will not get executed unless the products array changes.
+
+<a href="https://www.youtube.com/watch?v=4UZrsTqkcW4&t=100s"> Reference Video </a>

@@ -84,5 +84,11 @@ export const pages = [
 		description:
 			'Whenever we call an api and get an array of objects in return and suppose we want to map that prop to some component There might be missing data in our listNormally if there is missing data then it will show a blank field since the component did not recieve any prop so it cannot display it. We want to tackle this however more important is when the component is expecting an object and printing the data from inside that object',
 		moreDetails: '/propTypes'
+	},
+	{
+		title: 'Dynamic Routing (Advanced React)',
+		description:
+			'Now we will see how to use dynamic routing in react. We will create a dynamic route and pass the data to the component',
+		moreDetails: '/dynamicRoute'
 	}
 ];
