@@ -1,0 +1,56 @@
+* {
+	margin: 0px;
+}
+section {
+	background: #ff1b68;
+}
+main {
+	margin: 5px;
+}
+
+h1 {
+	color: white;
+	font-family: 'Luxurious Roman', cursive;
+}
+
+.main-header {
+	max-width: 100%;
+	margin: 30 auto;
+	background: greenyellow;
+	padding: 8px 16px;
+}
+
+.main-header__brand {
+	font-weight: 700;
+	font-size: 22px;
+	text-decoration-line: none;
+	color: rgb(34, 53, 37);
+}
+.main-nav {
+	display: inline-block;
+	width: calc(100% - 140px);
+	text-align: right;
+	vertical-align: middle;
+}
+.main-nav__item {
+	display: inline-block;
+}
+.main-nav__item a {
+	text-decoration-line: none;
+	color: rgb(34, 53, 37);
+	margin: 0px 16px;
+	padding: 8px;
+}
+.main-nav__item a:hover,
+a:hover {
+	color: black;
+	font-weight: 600;
+}
+.main-nav__items {
+	margin: 0px;
+	list-style: none;
+}
+.main-header div {
+	display: inline-block;
+	vertical-align: middle;
+}
