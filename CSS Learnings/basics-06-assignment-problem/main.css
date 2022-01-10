@@ -1,0 +1,24 @@
+h1 {
+	color: aqua;
+}
+code {
+	font-family: monospace;
+	color: red;
+}
+.secondLI code  {
+	color: greenyellow;
+}
+body {
+	font-family: sans-serif;
+}
+li {
+	font-family: inherit;
+}
+ol li {
+	background-color: black;
+	color: white;
+}
+li + li {
+	background-color: black;
+	color: white;
+}
