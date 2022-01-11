@@ -1,0 +1,20 @@
+* {
+	margin: 0px;
+}
+.myBox {
+	margin: 30px 20px 10px 15px;
+	height: 100px;
+	padding: 10px 10px 20px 30px;
+	background-color: #ff1b68;
+	width: 40%;
+	display: inline-block;
+}
+.myBox__first {
+	height: 100vh;
+	/* display: none; */
+}
+
+div:last-of-type:hover {
+	color: white;
+	background-color: black;
+}

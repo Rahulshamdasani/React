@@ -1,15 +1,16 @@
 * {
 	margin: 0px;
 }
-section {
-	background: #ff1b68;
+.mainHead {
+	background: url("freedom.jpg");
+	height: 500px;
 }
 main {
 	margin: 5px;
 }
 
 h1 {
-	color: white;
+	color: black;
 	font-family: 'Luxurious Roman', cursive;
 }
 
@@ -42,7 +43,7 @@ h1 {
 	padding: 8px;
 }
 .main-nav__item a:hover,
-a:hover {
+.main-nav__item a:active {
 	color: black;
 	font-weight: 600;
 }
@@ -53,4 +54,18 @@ a:hover {
 .main-header div {
 	display: inline-block;
 	vertical-align: middle;
+}
+
+.cta a {
+	color: white;
+	background-color: #ff1b68;
+	padding: 8px 16px;
+	border-radius: 8px;
+}
+
+.cta a:hover,
+.cta a:active {
+	background: white;
+	color: #ff1b68;
+	background: none;
 }
