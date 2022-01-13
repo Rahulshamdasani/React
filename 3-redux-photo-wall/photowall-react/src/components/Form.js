@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Form = ({ allItems, setAllItems }) => {
+const Form = ({ allItems, setAllItems, setDisplayForm }) => {
 	const [ url, setUrl ] = useState('');
 	const [ description, setDescription ] = useState('');
 
@@ -13,6 +13,7 @@ const Form = ({ allItems, setAllItems }) => {
 		setAllItems([ ...allItems, newItem ]);
 		setUrl('');
 		setDescription('');
+		setDisplayForm(false);
 	};
 
 	return (
