@@ -4,6 +4,7 @@ const ItemDetails = ({ url, id, description, handleDelete }) => {
 	return (
 		<div>
 			<img src={url} alt="could not fetch what to display" />
+			<br />
 			{description}
 			<br />
 			<button onClick={() => handleDelete(id)} className="btn btn-danger">

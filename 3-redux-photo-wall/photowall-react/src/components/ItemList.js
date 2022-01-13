@@ -7,15 +7,17 @@ const ItemList = ({ allItems, handleDelete }) => {
 	return (
 		<div className="photo-grid">
 			{allItems &&
-				allItems.map((item, index) => (
-					<ItemDetails
-						url={item.url}
-						handleDelete={handleDelete}
-						key={index}
-						id={item.id}
-						description={item.description}
-					/>
-				))}
+				allItems
+					.sort((a, b) => b.id - a.id)
+					.map((item, index) => (
+						<ItemDetails
+							url={item.url}
+							handleDelete={handleDelete}
+							key={index}
+							id={item.id}
+							description={item.description}
+						/>
+					))}
 		</div>
 	);
 };

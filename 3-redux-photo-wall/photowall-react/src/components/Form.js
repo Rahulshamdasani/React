@@ -7,6 +7,7 @@ const Form = ({ allItems, setAllItems, setDisplayForm }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const newItem = {
+			id: Number(Date.now()),
 			url,
 			description
 		};
