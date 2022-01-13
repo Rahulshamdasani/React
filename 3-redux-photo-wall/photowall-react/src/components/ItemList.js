@@ -1,15 +1,20 @@
 import React from 'react';
+import './components.css';
+import ItemDetails from './ItemDetails';
 
-const ItemList = ({ allItems }) => {
+const ItemList = ({ allItems, handleDelete }) => {
 	console.log('ItemList items:', allItems);
 	return (
-		<div className="container">
+		<div className="photo-grid">
 			{allItems &&
 				allItems.map((item, index) => (
-					<div key={index}>
-						<img src={item.url} alt="No Image" />
-						<p>{item.description}</p>
-					</div>
+					<ItemDetails
+						url={item.url}
+						handleDelete={handleDelete}
+						key={index}
+						id={item.id}
+						description={item.description}
+					/>
 				))}
 		</div>
 	);
