@@ -1,0 +1,19 @@
+.photo-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 0 20px;
+}
+.photo-grid > div {
+	flex: 25%;
+	width: max-content;
+	margin: 10px;
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
