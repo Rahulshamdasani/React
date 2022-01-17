@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { connect } from 'react-redux';
+import ItemList from './components/ItemList';
+function App({ props }) {
+	return (
+		<div className="App">
+			<h1>Hello CodeSandbox</h1>
+			{console.log('App props:', props)}
+			<ItemList items={props.posts} />
+		</div>
+	);
 }
 
-export default App;
+function mapStateToProps(state) {
+	return {
+		props: state
+	};
+}
+
+export default connect(mapStateToProps)(App);
