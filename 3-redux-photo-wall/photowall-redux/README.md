@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Bulding redux application of photowall
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## S1: Creating a store and connecting component to store
+- Build a react app
+- Install redux specific packages
+  - npm install redux
+  - npm install react-redux
+- First task is to declare some data, import it to store and pass the store to props
+  - Declare the data inside <code>src/UI/data.js</code>
+  - Then create a folder named ```redux```
+    - It will have 2 files : 
+      - reducer
+      - store
+  - store uses reducer and index.js uses store
 
-## Available Scripts
+**_NOTE_** : At this point you should be able to see the state of store inside the component
 
-In the project directory, you can run:
+## S2 : Render the photowall from the data inside the state
+- Simply take the component and css file from react project
+- Remove the delete button (this we will handle in later steps)
+- Pass the props and display the props  
 
-### `npm start`
+## S3: Connecting the store to the component
+We can connect store to any/all the components, however it is not recommended to connect the store to small components, because it will be difficult to trace the data flow.
+- We can connect the store to the component using react-redux library
+- <code>import { connect } from 'react-redux'</code>
+- <pre style="color:yellow">
+    function mapStateToProps(state) {
+        return {
+            props: state
+        };
+    }
+    </pre>
+- Then the last step is, instead of exporting the component as a default, use <br/><code>export default connect(mapStateToProps)(NAME_OF_COMPONENT)</code>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## S4 : Dispatching actions
+- First we will create a file named ```actions.js``` inside the redux folder
+- This file will contain all the functions that we will be triggered to performa a certain actions
